@@ -1,0 +1,20 @@
+{% extends 'mein/layout.html' %}
+
+{% block title %}Добавить запись{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Добавить запись</h1>
+    </div>
+    <div class="create_post">
+      <form method="post">
+          {% csrf_token %}
+          {{ form.title }}<br>
+          {{ form.anons }}<br>
+          {{ form.full_text }}<br>
+          {{ form.data }}<br>
+          <span>{{ error }}</span>
+          <button class="btn-news-create" type="submit">Добавить статью</button>
+      </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'mein/layout.html' %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1><strong><BLOCKQUOTE><font size="10" color= "#000080">Новости:</font></BLOCKQUOTE></strong></h1>
+        {% if news %}
+            {% for new in news %}
+                <div class="text-news">
+                    <h3><BLOCKQUOTE><font size="5" color= "#000080">{{new.title}}:</font></BLOCKQUOTE></h3>
+                    <p>{{new.anons}}</p>
+                    <a href="{% url 'new-detail' new.id %}"><button class="btn_lesen">Читать</button></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <h1>Нет новостей</h1>
+        {% endif %}
+    </div>
+{% endblock %}

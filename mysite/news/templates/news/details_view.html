@@ -1,0 +1,15 @@
+{% extends 'mein/layout.html' %}
+
+{% block title %}{{ artricle.title }}{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1><BLOCKQUOTE><font size="10" color= "#000080">{{ artricle.title }}:</font></BLOCKQUOTE></h1>
+    </div>
+    <div class="details-news">
+        <p>{{ artricle.data }}</p>
+        <p>{{ artricle.full_text }}</p>
+        <a href="{% url 'new-delete' artricle.id %}"><button class="btn_delete">Удалить</button></a>
+        <a href="{% url 'new-update' artricle.id %}"><button class="btn_update">Обновить статью</button></a>
+    </div>
+{% endblock %}
